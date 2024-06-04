@@ -6,6 +6,7 @@ import {  AppContextProvider } from './components/AppContext';
 import { Layout } from './components/Layout';
 import MainRoutes from './routes';
 import { createLocalStorage, getAllLocalStorage } from './services/storage';
+import { AuthProvider } from './components/AuthContext';
 
 function App() {
 
@@ -14,11 +15,13 @@ function App() {
   return (
     <BrowserRouter>
       <AppContextProvider>
+        <AuthProvider>
         <ChakraProvider>
           <Layout>
             < MainRoutes />
           </Layout>
         </ChakraProvider>
+        </AuthProvider>
       </AppContextProvider>
     </BrowserRouter>
   );

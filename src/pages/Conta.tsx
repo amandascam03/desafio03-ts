@@ -31,7 +31,7 @@ const Conta = () => {
         getData()
     }, [])
 
-    const actualData = new Date()
+    const actualDate = new Date()
 
     if(userData && id !== userData.id) {
         navigate('/')
@@ -49,7 +49,7 @@ const Conta = () => {
                     ) : 
                     (
                         <>
-                            <CardInfo mainContent={`Bem vinda ${userData?.name}`} content={`${actualData.getDay()} / ${actualData.getMonth()} / ${actualData.getFullYear()} ${actualData.getHours()}:${actualData.getMinutes()}`} />
+                            <CardInfo mainContent={`Bem vinda ${userData?.name}`} content={`${actualDate.getDay()} / ${actualDate.getMonth()} / ${actualDate.getFullYear()} ${actualDate.getHours()}:${actualDate.getMinutes()}`} />
                             <CardInfo mainContent='Saldo' content={`R$ ${userData.balance}`}/>
                         </>
                     )
@@ -59,4 +59,4 @@ const Conta = () => {
     )
 }
 
-export default Conta
+export default Conta;
